@@ -1,9 +1,16 @@
-{{#partial "content"}}
-    <p class="display-3"> LETS PICK BEST HEROES IN THE WORLD!</p>
-    <li><img class="img-fluid" src = '/images/one.jpg'/></li>
-    <p class="text-success">click the button to creat a hero.</p>
-    <p>remember give the hero a name and the power </p>
-    <a href="/Squad"><button type="submit" class="btn btn-primary">Submit</button></a>
+{{#partial "title"}}
 
 {{/partial}}
-{{>layout.hbs}}
+
+{{#partial "content"}}
+    <div class="col-md-1"></div>
+    <div class="card col-md-10">
+        <p class="card-title" >Welcome!!</p>
+        <p class="card-text"> Create Heroes and add them to Squads of you just created!</p>
+        <a href="/squads/new" class="btn btn-outline-success col-md-6"> Create squad</a>
+        <br>
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
