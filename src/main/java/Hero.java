@@ -8,7 +8,7 @@ public class Hero {
     private String weakness;
     private int id;
     private int squadId;
-    private static List<Hero> instances = new ArrayList<Hero>();
+    private static List<Hero> minstances = new ArrayList<Hero>();
 
     public int getAge() {
         return age;
@@ -26,7 +26,7 @@ public class Hero {
         return weakness;
     }
     public static Hero findHero(int n) {
-        return instances.get(n-1);
+        return minstances.get(n-1);
     }
     public Hero(String name, int age, String power, String weakness, int squadId) {
         this.name = name;
@@ -36,8 +36,8 @@ public class Hero {
         this.squadId = squadId;
         Squad squad = Squad.find(squadId);
         squad.addHero(this);
-        instances.add(this);
-        this.id = instances.size();
+        minstances.add(this);
+        this.id = minstances.size();
     }
 
     public int getId() {
@@ -46,10 +46,10 @@ public class Hero {
     public int getSquadId() {
         return squadId;
     }
-    public static List<Hero> getHeroes() {
-        return instances;
+    public static List<Hero> getAll() {
+        return minstances;
     }
-    public static void clearAll() {
-        instances.clear();
+    public static void clearAllHeroes() {
+        minstances.clear();
     }
 }
