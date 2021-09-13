@@ -1,0 +1,28 @@
+{{#partial "title"}}
+    Create the best Squad.
+{{/partial}}
+<!--form inputing the Squad-->
+
+{{#partial "content"}}
+
+    <form action='/Squad_card/new' method="post" >
+        <div class="form-group">
+            <label for="leader">input your name.you the leader</label>
+            <input id="leader"  name="leader" type="text" class="form-control"  placeholder="leader">
+        </div>
+        <div class="form-group">
+            <label for="Squad">input the Squad Name</label>
+            <input  id="name"  name="name" type="text" class="form-control" placeholder="Squad name">
+        </div>
+        <div class="form-group">
+            <label for="size">Squad Size</label>
+            <input type="number" class="form-control" id="size" max="11" min="1" name="size" placeholder="Enter squad size">
+        </div>
+        <div class="form-group">
+            <label for="mission">what is the mission</label>
+            <input type="text" class="form-control" id="mission" name="mission" placeholder="Squad mission">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{{/partial}}
+{{>layout.hbs}}
