@@ -4,14 +4,11 @@ import java.util.List;
 public class Hero {
     private String name;
     private int age;
-    private String strength;
+    private String power;
     private String weakness;
     private int id;
-    private int sId;
-
-    private static List<Hero> mInstances = new ArrayList<>();
-
-
+    private int squadId;
+    private static List<Hero> instances = new ArrayList<Hero>();
 
     public int getAge() {
         return age;
@@ -20,42 +17,39 @@ public class Hero {
     public String getName() {
         return name;
     }
-    public String getSpecialPower(){
-        return strength;
+
+    public String getPower() {
+        return power;
     }
-    public String getWeakness(){
+
+    public String getWeakness() {
         return weakness;
     }
-    public static List<Hero> getAll(){
-        return mInstances;
+    public static Hero findHero(int n) {
+        return instances.get(n-1);
     }
-//to delete the hero
-
-    public static void clearAllHeroes(){
-        mInstances.clear();
-    }
-    public Hero(String name ,int age,String strength, int sId, String weakness){
-        this.name=name;
-        this.age=age;
-        this.weakness=weakness;
-        this.strength=strength;
-        this.sId=sId;
-        HeroSquad heroSquad= HeroSquad.find(sId);
-        heroSquad.addHero(this);
-        mInstances.add(this);
-        this.id=mInstances.size();
-
-    }
-    public static void clearAll(){
-        mInstances.clear();
+    public Hero(String name, int age, String power, String weakness, int squadId) {
+        this.name = name;
+        this.age = age;
+        this.power = power;
+        this.weakness = weakness;
+        this.squadId = squadId;
+        Squad squad = Squad.find(squadId);
+        squad.addHero(this);
+        instances.add(this);
+        this.id = instances.size();
     }
 
     public int getId() {
         return id;
     }
-
-    public int getsId() {
-        return sId;
+    public int getSquadId() {
+        return squadId;
     }
-
+    public static List<Hero> getHeroes() {
+        return instances;
+    }
+    public static void clearAll() {
+        instances.clear();
+    }
 }

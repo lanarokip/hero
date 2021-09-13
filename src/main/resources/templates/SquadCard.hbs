@@ -1,0 +1,18 @@
+{{#partial "title"}}
+    hurray! you have come up with a cool one!
+{{/partial}}
+{{#partial "content"}}
+    {{#if leader}}
+        {{#each leader}}
+            <h1>name:{{leader}}</h1>
+            <p>hello<span class="text-danger">{{ leader }}</span>.you are leading this great team</p>
+            <p>{{ name }} is the squad name</p>
+            <p>made up of {{ Size }} heroes</p>
+            <p>mission: {{ mission }}</p>
+            <a href="/squad"><button type="submit" class="btn btn-primary">Submit</button></a>
+        {{/each}}
+    {{else}}
+        <p>nothing</p>
+    {{/if}}
+{{/partial}}
+{{>layout.hbs}}
