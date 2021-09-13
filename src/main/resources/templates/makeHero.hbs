@@ -1,0 +1,24 @@
+{{#partial "content"}}
+
+    <form action='/heroes/new' method="post" >
+        <h2>there is a great war ahead lets create the heroes</h2>
+        <div class="form-group">
+            <label for="name">hero name</label>
+            <input id="name"  name="name" type="text" class="form-control"  placeholder="whats the hero name">
+        </div>
+        <div class="form-group">
+            <label for="age">how old is the hero</label>
+            <input  id="age"  name="age" type="number" class="form-control" placeholder="hero's age">
+        </div>
+        <div class="form-group">
+            <label for="special">Special power</label>
+            <input type="text" class="form-control" id="strength" name="strength" placeholder="Enter special power">
+        </div>
+        <div class="form-group">
+            <label for="weakness">what's the weakness</label>
+            <input type="text" class="form-control" id="weakness" name="weakness" placeholder="Squad mission">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{{/partial}}
+{{>layout.hbs}}
