@@ -9,16 +9,16 @@
         <input class="form-control" id="strength" name="strength" type="text" placeholder="Enter hero's Strength" required>
         <label for="weakness">Weakness: </label>
         <input class="form-control" id="weakness" name="weakness" type="text" placeholder="Enter hero's weakness" required>
-        <div >
-            <div >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
                 <label for="squadId" class="input-group-text"> Squad: </label>
             </div>
-            <select class="custom-select" id="squadId" name="squadId" required>
+            <select class="custom-select" id="squadId" name="squadId">
                 {{#each squads}}
-                <option value="{{id}}">{{name}}</option>
+                    <option value="{{id}}">{{name}}</option>
                 {{/each}}
             </select>
-            </div>
+        </div>
         <button type="submit" class="btn btn-primary"> Create Hero</button>
     </form>
 {{/partial}}

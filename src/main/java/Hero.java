@@ -8,7 +8,10 @@ public class Hero {
     private String weakness;
     private int id;
     private int squadId;
-    private static List<Hero> minstances = new ArrayList<Hero>();
+    private static List<Hero> minstances =  new ArrayList<Hero>();
+
+//   public Hero(String superman, int i, String sniffing, String love) {
+//    }
 
     public int getAge() {
         return age;
@@ -34,8 +37,8 @@ public class Hero {
         this.power = power;
         this.weakness = weakness;
         this.squadId = squadId;
-        Squad squad = Squad.find(squadId);
-        squad.addHero(this);
+//        Squad squad = Squad.find(squadId);
+//        squad.addHero(this);
         minstances.add(this);
         this.id = minstances.size();
     }

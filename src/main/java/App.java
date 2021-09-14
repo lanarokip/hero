@@ -10,10 +10,17 @@ import java.util.Map;
 
 public class App {
 
+        static int getHerokuAssignedPort() {
+            ProcessBuilder processBuilder = new ProcessBuilder();
+            if (processBuilder.environment().get("PORT") != null) {
+                return Integer.parseInt(processBuilder.environment().get("PORT"));
+            }
+            return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+        }
+        public static void main(String[] args) {
 
-    public static void main(String[] args) {
-
-        staticFileLocation("/public");
+            port(getHerokuAssignedPort());
+            staticFileLocation("/public");
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -48,11 +55,11 @@ public class App {
         }, new HandlebarsTemplateEngine());
         get("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            ArrayList<Squad> squads = Squad.getSquads();
-            model.put("squads", squads);
+            ArrayList<Squad> squadi = Squad.getSquads();
+            model.put("squads", squadi);
             return new ModelAndView(model, "/squadForm.hbs");
         }, new HandlebarsTemplateEngine());
-        get("squadi/id", (request, response) -> {
+        get("squadi/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
             model.put("squad", squad);
