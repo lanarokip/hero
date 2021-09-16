@@ -1,13 +1,35 @@
+
 {{#partial "title"}}
     Squads!
 {{/partial}}
 
 {{#partial "content"}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-danger" href="/">Home <span class="sr-only">heroes</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="/squads/new"> squad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="/heroes/new">hero</a>
+                </li>
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link disabled" href="#">Disabled</a>-->
+                <!--                </li>-->
+            </ul>
+        </div>
+    </nav>
     {{#if squads}}
         {{#each squads}}
             <div class="card col-lg-9">
                 <h1 class="text-center card-title" id="squad"> Squad name:{{name}}</h1>
-                    <a href="/squads/{{id}}" class="btn btn-outline-danger btn-lg col-md-6">View info</a>
+                    <a href="/squadi/{{id}}" class="btn btn-outline-danger btn-lg col-md-6">View info</a>
             </div>
 
         {{/each}}
